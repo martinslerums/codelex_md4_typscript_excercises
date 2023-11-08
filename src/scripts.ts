@@ -502,5 +502,117 @@ const functionOne =  (b: number, ...array: any[]): any[] => {
 
 const nthArrayElement = (a: number[], n: number): number [] => {
     let newArray: number [] = [];
-    
+    for (let i = n - 1; i < a.length; i += n) {
+        newArray.push(a[i]);
+      }
+    return newArray   
 }
+
+
+
+// Write a function that takes an object with two properties as argument
+// It should return the value of the property with key country
+interface Object {
+    continent: string,
+    country: string
+}
+const countryProperty = (object: Object): string => {
+    if ('country' in object) {
+        return object.country
+    }
+}
+
+
+
+// Write a function that takes an object with two properties as argument
+// It should return the value of the property with key 'prop-2'
+// Tip: you might want to use the square brackets property accessor
+
+interface Object2 {
+    [key: string]: any;
+}
+const squareBracketAccessor = (object: Object2): any => {
+    return object['prop-2']
+}
+
+
+
+// Write a function that takes an object with two properties and a string as arguments
+// It should return the value of the property with key equal to the value of the string
+
+const stringProperty = (object: Object2, str: string) => {
+    if(str in object){
+        return object[str]
+    }
+}
+
+
+
+// Write a function that takes an object (a) and a string (b) as argument
+// Return true if a has a property with key b
+// Return false otherwise
+
+const propertyWithKey = (a: Object2, b: string): boolean => {
+    return b in a;
+}
+
+
+
+// Write a function that a string (a) as argument
+// Create an object that has a property with key 'key' and a value of a
+// Return the object
+
+const createObject = (a: string): {key: string} => {
+    const object: {key: string} = {key: a}
+    return object;
+}
+
+
+
+// Write a function that takes two arrays (a and b) as arguments
+// Create an object that has properties with keys 'a' and corresponding values 'b'
+// Return the object
+
+const createObject2 = (a: string [], b: string []): { [a: string]: string } => {
+    const object: { [a: string]: string } = {};
+    for(let i = 0; i < a.length; i++){
+        object[a[i]] = b[i];
+    }
+    return object;
+}
+
+
+
+// Write a function that takes an object (a) as argument
+// Return an array with all object keys
+
+const objectKeyArray = (object: Object2): string [] => {
+    return Object.keys(object);
+}
+
+
+
+// Write a function that takes an object (a) as argument
+// Return the sum of all object values
+
+const objectValueSum = (object: Object2): string [] => {
+    return Object.values(object).reduce((a, b) => a + b)
+}
+
+
+
+// Write a function that takes an object as argument
+// It should return an object with all original object properties
+// except for the property with key 'b'
+
+
+function removeObjectProperty(object: Object2): Object2 {
+    const newObject: Object2 = {};
+  
+    for (const key in object) {
+      if (key !== 'b') {
+        newObject[key] = object[key];
+      }
+    }  
+    return newObject;
+  }
