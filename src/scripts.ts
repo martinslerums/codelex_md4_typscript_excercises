@@ -786,4 +786,62 @@ const sameDay = (dateOne: Date, dateTwo: Date): boolean => {
     
 }
 
-console.log(sameDay(new Date('2000/01/01'), new Date('2000/01/01')))
+
+
+// Write a function that takes two number arrays as parameters 
+// and return an array which contains elements from both 
+// arrays
+
+const contactArrays = (a: number [], b: number []): number [] => {
+    const abArray: number [] = [...a].concat([...b]);
+    return abArray;
+}
+
+
+
+// Write a function that takes an array and a string as parameters 
+// and return an array which contains all elements from the given array
+// and the given string as the last element
+
+const pushArray = (a: string [], b: string ): string [] => {
+    const updatedArray: string [] = [...a];
+    updatedArray.push(b)
+    return updatedArray;
+}
+
+
+
+// Write a function that takes an array and a string as parameters 
+// and return an array which contains all elements from the given array
+// and the given string as the first element
+
+const firstArray = (a: string [], b: string ): string [] => {
+    const updatedArray: string [] = [...a];
+    updatedArray.unshift(b);
+    return updatedArray
+}
+
+
+
+// Write a function that takes two objects as parameters 
+// and return an object which contains properties from both 
+// objects
+
+const MergeObjectTogether = (objectOne: Object2, objectTwo: Object2): Object2 => {
+    const mergedObject = {...objectOne, ...objectTwo}
+    return mergedObject
+}
+
+
+
+// Write a function that takes an object and a string as parameters 
+// and return an object which contains properties from the given object
+// and a new property favoriteMovie with the value equal to the given string
+
+const favoriteMovie = (object: Object2, str: string): Object2 => {
+    const updatedObject = {...object}
+    updatedObject.favoriteMovie = str
+    return updatedObject
+}
+
+console.log(favoriteMovie({ eyeColor: 'blue', age: 15 }, 'Twilight'))
